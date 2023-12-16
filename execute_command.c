@@ -24,7 +24,10 @@ void execom(char *command, char *args[], char *envp[])
 		{
 			fullpath = checkpathfile(path, command);
 			if (fullpath != NULL)
-				exectype = 2; } }
+			{
+				exectype = 2;
+				free(fullpath);
+	       		free(path); } } }
 	if (exectype == 0)
 	{
 		printf("bash: %s: command not found\n", command);
@@ -35,15 +38,13 @@ void execom(char *command, char *args[], char *envp[])
 		if (exectype == 1)
 		{
 			if (execve(command, args, envp) == -1)
-				showerror("Execve Failure"); }
+				showerror("Execve Failure"); } 
 		else if (exectype == 2)
 		{
 			if (execve(fullpath, args, envp) == -1)
-				showerror("Execve Failure");
-			} }
+				showerror("Execve Failure"); } }
 	else
 	{
 		if (waitpid(pid, NULL, 0) == -1)
-			showerror("waitpid");
-	}
+			showerror("waitpid"); }
 }
