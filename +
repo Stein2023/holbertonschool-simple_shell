@@ -17,12 +17,8 @@ void interactive(void)
 			printf("$ ");
 		read_line(&line, &line_size, &read);
 		if (iswhite(line))
-		{
-			freestring(line,func);
 			continue;
-		}
 		array = malloc(sizeof(char *) * (ntokens + 2));
-		printf("arraysize: %i", ntokens + 2);
 		if (array == NULL)
 		{	
 			freestring(line, func);

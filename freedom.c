@@ -5,13 +5,31 @@
  * @size: size of the array.
  * Return:
  */
-void freedom(char **array, int size)
+void freedom(char **array, char *name)
 {
-	int i;
-
-	for (i = 0; i < size; i++)
-	{
-		free(array[i]);
+if (array != NULL)
+	{	
+int count = 0;
+	while (array[count] != NULL) 
+	{	
+		 printf("freeing %s string from array[%i] in %s\n", array[count], count, name);
+		freestring(array[count], name);
+		++count;
 	}
+	printf("freeing %s string from array[%i] in %s\n", array[count], count, name);
+	freestring(array[count], name);
+	printf("FREE EMPTY ARRAY");
 	free(array);
+	array = NULL;
+	}
+}
+
+void freestring(char * string, char *name)
+{
+	printf("freeing %s string in %s\n", string, name);
+if (string != NULL)
+	{
+	free(string);
+	string = NULL;
+	}
 }

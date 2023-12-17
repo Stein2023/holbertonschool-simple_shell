@@ -12,7 +12,9 @@
  */
 void read_line(char **line, size_t *line_size, ssize_t *read)
 {
-
+	char *func = "read_line";
+	*line = NULL;
+	*line_size = 0;
 	*read = getline(line, line_size, stdin);
 	if (*read == -1)
 	{
@@ -21,20 +23,19 @@ void read_line(char **line, size_t *line_size, ssize_t *read)
 			if (isatty(STDIN_FILENO))
 				printf("\n");
 			if (*line != NULL)
-				free(*line);
+				freestring(*line, func);
 			exit(EXIT_SUCCESS);
 		}
 		else
 		{
 			perror("Error: getline");
 			if (*line != NULL)
-				free(*line);
+				freestring(*line, func);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else if (*read == 1)
 	{
 		printf("$ ");
-		read_line(line, line_size, read);
 	}
 }

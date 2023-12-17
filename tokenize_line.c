@@ -8,6 +8,7 @@
 
 int tokenize_line(char *line, char **array)
 {
+	char *func = "tokenize";
 	char *token;
 	int i = 0;
 
@@ -20,5 +21,7 @@ int tokenize_line(char *line, char **array)
 		token = strtok(NULL, " \t\n");
 		i++;
 	}
+	array[i] = NULL;
+	freestring(line, func);
 	return (i);
 }

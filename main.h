@@ -11,9 +11,9 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-extern char **environ;
 
-void freedom(char **array, int size);
+extern char **environ;
+void freedom(char **array, char *name);
 void read_line(char **line, size_t *line_size, ssize_t *read);
 int tokenize_line(char *line, char **array);
 void exit_builtin(void);
@@ -26,5 +26,6 @@ void interactive(void);
 void builtcheck(char *command);
 void showerror(char *string);
 int iswhite(const char *str);
+void freestring(char * string, char *name);
 
 #endif

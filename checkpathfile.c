@@ -9,6 +9,7 @@
 
 char *checkpathfile(char *pathline, char *command)
 {
+	char *func = "checkpathfile";
 	struct stat filestat;
 	size_t len;
 	char *trypath, *delimiters = ":", *fullpath;
@@ -25,7 +26,7 @@ char *checkpathfile(char *pathline, char *command)
 		sprintf(fullpath, "%s/%s", trypath, command);
 		if (stat(fullpath, &filestat) == 0)
 			return (fullpath);
-		free(fullpath);
+		freestring(fullpath, func);
 		trypath = strtok(NULL, delimiters);
 	}
 	return (NULL);
