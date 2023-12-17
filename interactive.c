@@ -22,7 +22,6 @@ void interactive(void)
 			continue;
 		}
 		array = malloc(sizeof(char *) * (ntokens + 2));
-		printf("arraysize: %i", ntokens + 2);
 		if (array == NULL)
 		{	
 			freestring(line, func);

@@ -17,7 +17,6 @@ void execom(char *command, char *args[], char *envp[])
 	
 	if (strcmp(command, "exit") == 0)
 	{
-	printf("comparar %s = %s", command, "exit");
 	freedom(args, func);
 	exit(EXIT_SUCCESS);
 	}
