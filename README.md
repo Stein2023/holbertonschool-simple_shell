@@ -6,8 +6,7 @@ interact with the system by typing commands and executing them.\
 The shell works by prompting users for input, interpreting their input,\
 and then handling output from the underlying operating system.
 
-Our shell handles in a basic way the interactive and\
-non interactive modes.
+Our shell handles the interactive and non-interactive modes.
 
 - Compiled with:
 ```
@@ -155,7 +154,7 @@ Finally, the function frees the memory used by the line.
 
  ## [checkpathfile.c](https://github.com/Stein2023/holbertonschool-simple_shell/blob/master/checkpathfile.c)
 
-**checkpathfile** is function that checks if a file\
+**checkpathfile** is a function that checks if a file\
 corresponding to the command exists in the directories\
 specified in the path string. If it finds such a file,\
 it returns the full path to that file. If it doesn’t find\
@@ -169,7 +168,7 @@ checking if a command exists in the directories specified in the path string.
 
  ## [pathcheck.c](https://github.com/Stein2023/holbertonschool-simple_shell/blob/master/pathcheck.c)
 
-**pathchecksource** is function which takes an array\
+**pathchecksource** is a function which takes an array\
 of strings as an argument, which represents the\
 environment variables. It is made to find and return\
 the value of the “PATH” environment variable. It uses\
@@ -216,7 +215,7 @@ If it is not, it then frees string and sets it to NULL.
 
 ## [showerror.c](https://github.com/Stein2023/holbertonschool-simple_shell/blob/master/showerror.c)
 
-**showerror** is function that shows an error\
+**showerror** is a function that shows an error\
 message and exits the program. It takes a string\
 as an argument and prints the string followed by a colon,\
 a space, and then the current errno value.\
