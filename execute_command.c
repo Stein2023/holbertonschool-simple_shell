@@ -4,7 +4,6 @@
  * @command: The command to be executed. It can be a full path to the
  * executable or just the command.
  * @args:array of arguments to be passed to the command.
- * @envp:array of strings that represent the environment for the new process.
  * Return: nothing.
  */
 void execom(char *command, char *args[])
@@ -14,7 +13,7 @@ void execom(char *command, char *args[])
 	char **env = environ, *path = NULL, *fullpath = NULL;
 	struct stat filestat;
 	int exectype = 0;
-	
+
 	if (strcmp(command, "exit") == 0)
 	{
 	freedom(args, func);
@@ -30,9 +29,7 @@ void execom(char *command, char *args[])
 			fullpath = checkpathfile(path, command);
 			freestring(path, func);
 			if (fullpath != NULL)
-				exectype = 2;
-	       	} 
-	}
+				exectype = 2;}}
 	if (exectype == 0)
 	{
 		printf("bash: %s: command not found\n", command);
@@ -47,9 +44,7 @@ void execom(char *command, char *args[])
 			{	
 				freedom(args, func);
 				freestring(fullpath, func);
-				showerror("Execve Failure");
-		       	}
-		}
+				showerror("Execve Failure");}}
 		else if (exectype == 2)
 		{
 			if (execve(fullpath, args, environ) == -1)

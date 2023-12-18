@@ -2,7 +2,7 @@
 /**
  * freedom - function to free each element of an array.
  * @array: array to be freed.
- * @size: size of the array.
+ * @name: size of the array.
  * Return:
  */
 void freedom(char **array, char *name)
@@ -21,6 +21,13 @@ void freedom(char **array, char *name)
 	array = NULL;
 	}
 }
+
+/**
+ * freestring - function
+ * @string: string to be freed
+ * @name: name of funtion where array comes from
+ * return: void
+ */
 
 void freestring(char * string, char *name)
 {
