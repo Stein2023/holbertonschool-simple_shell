@@ -20,7 +20,6 @@ void execom(char *command, char *args[], char *envp[])
 	freedom(args, func);
 	exit(EXIT_SUCCESS);
 	}
-	builtcheck(command);
 	if (stat(command, &filestat) == 0)
 		exectype = 1;
 	else
