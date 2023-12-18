@@ -31,6 +31,5 @@ void nonInteractive(void)
 		ntokens = tokenize_line(line, array);
 		execom(array[0], array, environ);
 		freedom(array, func);
-		freestring(line, func);
 	}
 }
