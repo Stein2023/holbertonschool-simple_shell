@@ -7,7 +7,7 @@
  * @envp:array of strings that represent the environment for the new process.
  * Return: nothing.
  */
-void execom(char *command, char *args[], char *envp[])
+void execom(char *command, char *args[])
 {
 	char *func = "execute command";
 	pid_t pid;
@@ -43,7 +43,7 @@ void execom(char *command, char *args[], char *envp[])
 	{
 		if (exectype == 1)
 		{
-			if (execve(command, args, envp) == -1)
+			if (execve(command, args, environ) == -1)
 			{	
 				freedom(args, func);
 				freestring(fullpath, func);
@@ -52,7 +52,7 @@ void execom(char *command, char *args[], char *envp[])
 		}
 		else if (exectype == 2)
 		{
-			if (execve(fullpath, args, envp) == -1)
+			if (execve(fullpath, args, environ) == -1)
 			{
 				freedom(args, func);
 				freestring(fullpath, func);

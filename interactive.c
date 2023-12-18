@@ -29,7 +29,7 @@ void interactive(void)
 			exit(EXIT_FAILURE);
 		}
 		ntokens = tokenize_line(line, array);
-		execom(array[0], array, environ);
+		execom(array[0], array);
 		freedom(array, func);
 	}
 }

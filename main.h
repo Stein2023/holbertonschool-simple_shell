@@ -18,7 +18,7 @@ void read_line(char **line, size_t *line_size, ssize_t *read);
 int tokenize_line(char *line, char **array);
 void exit_builtin(void);
 void handle_env(void);
-void execom(char *command, char *args[], char *envp[]);
+void execom(char *command, char *args[]);
 void nonInteractive(void);
 char *checkpathfile(char *pithline, char *command);
 char *pathchecksource(char **env);
